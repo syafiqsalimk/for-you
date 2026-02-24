@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You</title>
+<style>
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        background: linear-gradient(120deg, #f6f1eb, #e9d8c7);
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: #333;
+    }
+
+    .card {
+        background: #fff;
+        padding: 32px;
+        border-radius: 16px;
+        max-width: 420px;
+        width: 90%;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        text-align: center;
+        display: none;
+    }
+
+    .card.active {
+        display: block;
+    }
+
+    h1 {
+        font-size: 22px;
+        margin-bottom: 14px;
+    }
+
+    p {
+        font-size: 15px;
+        line-height: 1.7;
+        margin-bottom: 18px;
+    }
+
+    input {
+        width: 100%;
+        padding: 12px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    button {
+        background: #c08b5c;
+        border: none;
+        color: #fff;
+        padding: 12px 20px;
+        border-radius: 10px;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #a97448;
+    }
+
+    .small {
+        font-size: 12px;
+        color: #777;
+        margin-top: 10px;
+    }
+</style>
+</head>
+<body>
+
+<!-- LOCK -->
+<div class="card active" id="lock">
+    <h1>Hai kamu 🤍</h1>
+    <p>
+        Ini aku bikin pelan-pelan,  
+        sambil mikirin kamu.
+    </p>
+
+    <input type="password" id="password" placeholder="Masukin kata rahasianya">
+    <button onclick="unlock()">Buka</button>
+
+    <p class="small">Petunjuk: tempat pertama kali kita ketemu banget.</p>
+</div>
+
+<!-- CONTENT -->
+<div class="card" id="content">
+    <h1>Buat Kamu</h1>
+
+    <p>
+        Aku pengen kamu tau satu hal.
+    </p>
+
+    <p>
+        Kamu bebas ngelakuin apa pun  
+        yang kamu rasa bener buat diri kamu.  
+        Ngejar hal yang kamu mau,  
+        milih jalan yang kamu percaya.
+    </p>
+
+    <p>
+        Walaupun mungkin ada orang di sekitar kamu  
+        yang belum tentu sepenuhnya ngerti,  
+        atau belum bisa dukung kamu sekarang,  
+        itu nggak bikin pilihan kamu jadi salah.
+    </p>
+
+    <p>
+        Aku tetap dukung kamu,  
+        dengan caraku yang tenang.
+    </p>
+
+    <p>
+        Aku juga mau jujur.  
+        Aku nggak akan ngejar kamu,  
+        nggak akan maksa kamu buat siap,  
+        dan nggak akan ganggu ruang kamu.
+    </p>
+
+    <p>
+        Aku di sini,  
+        dan aku nunggu di titik yang wajar —  
+        sampai kamu sendiri ngerasa siap,  
+        kalau suatu hari kamu mau.
+    </p>
+
+    <p>
+        Dan kalau di tengah jalan  
+        kamu pengen cerita tentang apa pun,  
+        kamu boleh datang ke aku.  
+        Tanpa tekanan. Tanpa kewajiban.
+    </p>
+
+    <p class="small">
+        — dari aku, yang peduli
+    </p>
+</div>
+
+<script>
+function unlock() {
+    const pass = document.getElementById("password").value.toLowerCase();
+    const correct = "kabanos"; // GANTI DENGAN KATA RAHASIA KALIAN
+
+    if (pass === correct) {
+        document.getElementById("lock").classList.remove("active");
+        document.getElementById("content").classList.add("active");
+    } else {
+        alert("Belum itu 🙂");
+    }
+}
+</script>
+
+</body>
+</html>
